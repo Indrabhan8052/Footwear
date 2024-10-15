@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .ab {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0px 3px 3px 3px #000;
+            border-radius: 5px 80px 5px 80px;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .card h2, .card h3 {
+            text-align: center;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-media .fa {
+            margin: 0 10px;
+        }
+        .fa-instagram {
+            color: red;
+        }
+        .fa-linkedin-square, .fa-facebook-square {
+            color: blue;
+        }
+        .fa-twitter {
+            color: rgb(40, 15, 182);
+        }
+        .fa-youtube-play {
+            color: red;
+        }
+        @media (min-width: 768px) {
+            .ab{
+                flex-direction: row;
+            }
+            .card {
+                flex: 1;
+                max-width: calc(33.333% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ab">
+        <div class="card">
+            <img src="my photo.jpg" alt="Profile Picture">
+            <h2>Indrabhan Verma</h2>
+            <h3>Information Technology<br>
+                A.P.J Abdul Kalam Technology University, Lucknow<br>
+                E-Mail ID: <a href="mailto:indrabhan919@gmail.com">indrabhan919@gmail.com</a><br>
+                Contact: <a href="tel:8052860685">8052860685</a>
+            </h3>
+            <div class="social-media">
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/indrabhan-verma-342a2a275" class="fa fa-linkedin-square"></a>
+                <a href="#" class="fa fa-facebook-square"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-youtube-play"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
