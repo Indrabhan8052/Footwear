@@ -67,6 +67,12 @@
             background-color: white;
             margin: 4px 0;
         }
+        .cart-counter{
+            background-color: #ff4141;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+        }
         .slider {
             width: 100%;
             height: 60vh;
@@ -87,21 +93,11 @@
             width: 100%;
         }
         @keyframes slide {
-            0% {
-                margin-left: 0;
-            }
-            25% {
-                margin-left: -100%;
-            }
-            50% {
-                margin-left: -200%;
-            }
-            75% {
-                margin-left: -300%;
-            }
-            100% {
-                margin-left: 0;
-            }
+            0% { margin-left: 0; }
+            25% { margin-left: -100%; }
+            50% { margin-left: -200%; }
+            75% { margin-left: -300%; }
+            100% { margin-left: 0; }
         }
         .product, .product2 {
             display: flex;
@@ -119,6 +115,12 @@
             text-align: center;
             border-radius: 10px;
             background-color: #f9f9f9;
+        }
+        .content div:hover{
+            transform: scale(1.05);
+        }
+        .content2 div:hover{
+            transform: scale(1.05);
         }
         img {
             width: 50%;
@@ -158,8 +160,6 @@
                 position: absolute;
                 top: 50px;
                 left: 0;
-                background-color: transparent;
-
             }
             ul.active {
                 display: flex;
@@ -189,7 +189,6 @@
         }
     </style>
 </head>
-
 <body>
     <div id="container">
         <div id="header">
@@ -202,21 +201,13 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="content">
+            <ul class="nav-links">
                 <li><b><a href="#">Home</a></b></li>
                 <li><b><a href="About.html">About</a></b></li>
                 <li><b><a href="Login.html">Login</a></b></li>
-                <li><b><a href="#">Cart</a></b></li>
+                <li><b><a href="#">Cart (<span id="cart-counter" class="cart-counter">0</span>)</a></b></li>
             </ul>
         </div>
-
-        <script>
-            function toggleMenu() {
-                const menu = document.querySelector('.content');
-                menu.classList.toggle('active');
-            }
-        </script>
-
         <div class="slider">
             <div class="slides">
                 <div class="slide"><img src="shoe-background.jpg" alt="Image 1"></div>
@@ -225,115 +216,156 @@
                 <div class="slide"><img src="sliper background.jpg" alt="Image 4"></div>
             </div>
         </div><br>
-
         <div class="content">
             <h2>Shoes stores</h2>
             <div class="product">
                 <div>
                     <img src="1.jpg" alt="Product 1">
-                    <p class="price">$50.00</p>
+                    <p class="product-name">Classic White Sneakers</p>
+                    <p class="price">Rs.550</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="50">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="2.jpg" alt="Product 2">
-                    <p class="price">$60.00</p>
+                    <p class="product-name">Blue Sports Shoes</p>
+                    <p class="price">Rs.600</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="60">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="3.jpg" alt="Product 3">
-                    <p class="price">$55.00</p>
+                    <p class="product-name">Casual Black Trainers</p>
+                    <p class="price">Rs.550</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="55">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="4.jpg" alt="Product 4">
-                    <p class="price">$45.00</p>
+                    <p class="product-name">Elegant Brown Loafers</p>
+                    <p class="price">Rs.450</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="45">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="5.jpg" alt="Product 5">
-                    <p class="price">$70.00</p>
+                    <p class="product-name">Stylish Grey Running Shoes</p>
+                    <p class="price">Rs.700</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="70">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="1.jpg" alt="Product 6">
-                    <p class="price">$65.00</p>
+                    <p class="product-name">High-Top Skate Shoes</p>
+                    <p class="price">Rs.650</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="65">Add to Cart</button>
                     </div>
                 </div>
             </div>
-        </div><br>
+        </div>        
 
         <div class="content2">
             <h2>Slipper stores</h2>
             <div class="product2">
                 <div>
                     <img src="slip1.webp" alt="Slipper 1">
-                    <p class="price">$20.00</p>
+                    <p class="product-name">Comfort Foam Flip-Flops</p>
+                    <p class="price">Rs.200</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="20">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="slipper2.jpg" alt="Slipper 2">
-                    <p class="price">$25.00</p>
+                    <p class="product-name">Beach Slide Sandals</p>
+                    <p class="price">Rs.250</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="25">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="slip0.jpeg" alt="Slipper 3">
-                    <p class="price">$30.00</p>
+                    <p class="product-name">Soft Cushion Slippers</p>
+                    <p class="price">Rs.300</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="30">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="slip3.jpg" alt="Slipper 4">
-                    <p class="price">$22.00</p>
+                    <p class="product-name">Casual Home Slippers</p>
+                    <p class="price">Rs.220</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="22">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="slipper2.jpg" alt="Slipper 5">
-                    <p class="price">$28.00</p>
+                    <p class="product-name">Outdoor Rubber Slippers</p>
+                    <p class="price">Rs.280</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="28">Add to Cart</button>
                     </div>
                 </div>
                 <div>
                     <img src="slip1.webp" alt="Slipper 6">
-                    <p class="price">$26.00</p>
+                    <p class="product-name">Premium Memory Foam Slippers</p>
+                    <p class="price">Rs.260</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
-                        <button class="btn">Add to Cart</button>
+                        <button class="btn add-to-cart" data-product="5" data-price="26">Add to Cart</button>
                     </div>
                 </div>
             </div>
+        </div>        
+            <script>
+                function toggleMenu() {
+                    const navLinks = document.querySelector('.nav-links');
+                    navLinks.classList.toggle('active');
+                }
+            
+                let cart = [];
+                function addToCart(productId, productPrice) {
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ id: productId, price: productPrice, quantity: 1 });
+                    }
+                    updateCartCounter();
+                }
+                function updateCartCounter() {
+                    const cartCounter = document.getElementById('cart-counter');
+                    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                    cartCounter.textContent = totalItems;
+                }
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const productId = parseInt(this.getAttribute('data-product'));
+                        const productPrice = parseFloat(this.getAttribute('data-price'));
+                        addToCart(productId, productPrice);
+                    });
+                });
+            </script>
+            
         </div>
     </div>
 </body>
-
 </html>
