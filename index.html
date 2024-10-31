@@ -94,29 +94,29 @@
             75% {margin-left: -300%;}
             100% {margin-left: 0;}
         }
+        @media(max-width:768px){
+            .slide{
+                height: 100vh;
+                width: 100%;
+        }
+    }
         .product,
         .product2 {
             display: flex;
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             justify-content: space-around;
             gap: 10px;
             padding: 10px;
         }
         .product div,
         .product2 div {
-            flex: 0 1 calc(33.33% - 20px);
+            flex: 0 1 calc(30% - 20px);
             border: 1px solid black;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
             padding: 10px;
             text-align: center;
             border-radius: 10px;
             background-color: #f9f9f9;
-        }
-        .content div:hover {
-            transform: scale(1.05);
-        }
-        .content2 div:hover {
-            transform: scale(1.05);
         }
         img {
             width: 50%;
@@ -132,6 +132,8 @@
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
+            height: 8vh;
+
         }
         .btn {
             background-color: rgb(50, 152, 189);
@@ -141,6 +143,7 @@
             cursor: pointer;
             border-radius: 5px;
             width: 45%;
+            font-size: 8px;
         }
         .btn:hover {
             background-color: #336d8b;
@@ -164,9 +167,7 @@
             margin: 10px 0;
         }
         @media (max-width: 768px) {
-            .box {
-                width: 70%;
-            }
+            .box {  width: 50%;}
             ul {
                 display: none;
                 flex-direction: column;
@@ -184,15 +185,38 @@
                 z-index: 10;
             }
             .hamburger { display: flex;}
-            .product div,.product2 div {flex: 0 1 calc(50% - 10px); }
+            .product div,.product2 div {
+                flex: 0 1 calc(50% - 10px);
+         }
+         .product, .product2{ 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+            padding: 10px;
+        }
         }
         @media (max-width: 480px) {
-            .product div,
-            .product2 div {
-                flex: 0 1 100%;
+            .box{
+                width: 30%;
             }
+           .product, .product2{ 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+            padding: 10px;
+        }
+            .product div, .product2 div {flex: 0 1 100%;}
             .logo { font-size: 20px; }
             li {padding: 10px;}
+        }
+        footer{
+            height: 20vh;
+            width:100%;
+            text-align: center;
+            padding-top: 20px;
+            background-color: gray;
         }
     </style>
 </head>
@@ -229,7 +253,7 @@
             <div class="product">
                 <div>
                     <img src="1.jpg" alt="Product 1">
-                    <p class="product-name">Classic White Sneakers</p>
+                    <p class="product-name">Casual Black Trainers</p>
                     <p class="price">Rs.550</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -238,7 +262,7 @@
                 </div>
                 <div>
                     <img src="2.jpg" alt="Product 2">
-                    <p class="product-name">Blue Sports Shoes</p>
+                    <p class="product-name">Classic white sneakers</p>
                     <p class="price">Rs.600</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -247,7 +271,7 @@
                 </div>
                 <div>
                     <img src="3.jpg" alt="Product 3">
-                    <p class="product-name">Casual Black Trainers</p>
+                    <p class="product-name">Blue sports Shoes</p>
                     <p class="price">Rs.550</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -256,7 +280,7 @@
                 </div>
                 <div>
                     <img src="4.jpg" alt="Product 4">
-                    <p class="product-name">Elegant Brown Loafers</p>
+                    <p class="product-name">Elegant pink Loafers</p>
                     <p class="price">Rs.450</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -265,7 +289,7 @@
                 </div>
                 <div>
                     <img src="5.jpg" alt="Product 5">
-                    <p class="product-name">Stylish Grey Running Shoes</p>
+                    <p class="product-name">Stylish orange Running Shoes</p>
                     <p class="price">Rs.700</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -288,8 +312,8 @@
             <h2>Slippers stores</h2>
             <div class="product2">
                 <div>
-                    <img src="4.jpg" alt="Slipper 1">
-                    <p class="product-name">Classic Brown Slippers</p>
+                    <img src="slip0.jpeg" alt="Slipper 1">
+                    <p class="product-name">fashiony sliper</p>
                     <p class="price">Rs.250</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -297,7 +321,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="3.jpg" alt="Slipper 2">
+                    <img src="slip1.webp" alt="Slipper 2">
                     <p class="product-name">Comfort Blue Slippers</p>
                     <p class="price">Rs.300</p>
                     <div class="btn-group">
@@ -325,7 +349,7 @@
                 </div>
                 <div>
                     <img src="slipper2.jpg" alt="Slipper 5">
-                    <p class="product-name">Outdoor Rubber Slippers</p>
+                    <p class="product-name">Rubber Slippers</p>
                     <p class="price">Rs.280</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -334,7 +358,7 @@
                 </div>
                 <div>
                     <img src="slip1.webp" alt="Slipper 6">
-                    <p class="product-name">Premium Memory Foam Slippers</p>
+                    <p class="product-name">Premium Foam Slippers</p>
                     <p class="price">Rs.260</p>
                     <div class="btn-group">
                         <button class="btn">Buy</button>
@@ -396,5 +420,7 @@
             document.getElementById('cart-modal').style.display = 'none';
         }
     </script>
+    <footer> <p>powered by Indra Bhan Verma</p>
+    <p>In this website every product must be accurate quality.</p></footer>
 </body>
 </html>
